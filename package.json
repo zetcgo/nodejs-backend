@@ -1,0 +1,23 @@
+{
+    "name": "nodejs-backend",
+    "version": "0.0.0",
+    "description": "Node.js 백엔드 개발자 되기",
+    "type": "module",
+    "scripts": {
+        "format": "prettier --check .",
+        "format:fix": "prettier --write .",
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix ."
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.20.0",
+        "eslint": "^9.20.1",
+        "eslint-plugin-prettier": "^5.2.3",
+        "gitmoji-cli": "^9.5.0",
+        "globals": "^15.15.0",
+        "lefthook": "^1.10.10",
+        "npm-check-updates": "^17.1.14",
+        "prettier": "^3.5.0",
+        "sort-package-json": "^2.14.0"
+    }
+}

@@ -1,0 +1,12 @@
+pre-commit:
+    parallel: true
+    commands:
+        package-json:
+            glob: '**/package.json'
+            run: bun sort-package-json -c
+        prettier:
+            glob: '**'
+            run: bun run format
+        eslint:
+            glob: '**'
+            run: bun run lint
