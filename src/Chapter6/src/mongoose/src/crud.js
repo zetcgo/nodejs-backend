@@ -8,13 +8,13 @@ import Person from './person.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config({ path: path.join(__dirname, '../../../.env') });
+dotenv.config({ path: path.join(__dirname, '../.env') });
 
 const app = express();
 app.use(bodyParser.json());
 app.listen(3000, async () => {
     console.log('Server running on http://localhost:3000');
-    const mongodbUri = `mongodb+srv://cjr202321:${process.env.MONGODB_PASSWORD}@cluster.guwqy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster`;
+    const mongodbUri = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_CLUSTER}/?retryWrites=true&w=majority&appName=Cluster`;
 
     mongoose.connect(mongodbUri).then(() => console.log('Connected to MongoDB'));
 });
