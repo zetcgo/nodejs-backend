@@ -1,16 +1,11 @@
-import { fileURLToPath } from 'url';
-import path from 'path';
-import dotenv from 'dotenv';
-import express from 'express';
-import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import Person from './person.js';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-dotenv.config({ path: path.join(__dirname, '../.env') });
-
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
+const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const Person = require('./person');
+
 app.use(bodyParser.json());
 app.listen(3000, async () => {
     console.log('Server running on http://localhost:3000');

@@ -7,7 +7,7 @@ POST {{server}}/person
 Content-Type: application/json
 
 {
-    "name": "Roy Cho",
+    "name": "Roy",
     "age": 21,
     "email": "cjr202321@gmail.com"
 }
@@ -18,7 +18,7 @@ PUT {{server}}/person/cjr202321@gmail.com
 Content-Type: application/json
 
 {
-    "age": 32
+    "age": 19
 }
 ###
 DELETE {{server}}/person/cjr202321@gmail.com

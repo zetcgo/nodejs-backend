@@ -15,8 +15,8 @@
         "sort-package-json": "^2.14.0",
       },
     },
-    "src/Chapter3/express-server": {
-      "name": "nodejs-backend__chapter3__express-server",
+    "src/Chapter3/express": {
+      "name": "nodejs-backend__chapter3__express",
       "dependencies": {
         "express": "^4.21.2",
       },
@@ -31,6 +31,7 @@
     "src/Chapter6/src/mongoose": {
       "name": "nodejs-backend__chapter6__mongoose",
       "dependencies": {
+        "body-parser": "^1.20.3",
         "mongoose": "^8.10.0",
       },
     },
@@ -478,7 +479,7 @@
 
     "node-fetch": ["node-fetch@3.3.2", "", { "dependencies": { "data-uri-to-buffer": "^4.0.0", "fetch-blob": "^3.1.4", "formdata-polyfill": "^4.0.10" } }, "sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA=="],
 
-    "nodejs-backend__chapter3__express-server": ["nodejs-backend__chapter3__express-server@workspace:src/Chapter3/express-server"],
+    "nodejs-backend__chapter3__express": ["nodejs-backend__chapter3__express@workspace:src/Chapter3/express"],
 
     "nodejs-backend__chapter6": ["nodejs-backend__chapter6@workspace:src/Chapter6"],
 

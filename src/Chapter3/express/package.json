@@ -1,0 +1,6 @@
+{
+    "name": "nodejs-backend__chapter3__express",
+    "dependencies": {
+        "express": "^4.21.2"
+    }
+}

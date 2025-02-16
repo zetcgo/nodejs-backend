@@ -1,5 +1,5 @@
-import http from 'http';
-import url from 'url';
+const http = require('http');
+const url = require('url');
 
 http.createServer((req, res) => {
     const path = url.parse(req.url, true).pathname;
