@@ -1,0 +1,16 @@
+extends layout
+
+block style
+    link(rel='stylesheet', href='/verify.css')
+block content
+    form.verify-form(method='POST', action=href)
+        label.verify-form__container
+            | Previous Password
+            input.verify-form__input(
+                type='password',
+                name='password',
+                placeholder='Enter Password...',
+                required
+            )
+        p.verify-form__error-text #{ error }
+        button.button Submit

@@ -1,0 +1,46 @@
+extends layout
+
+block style
+    link(rel='stylesheet', href='/article.css')
+block content
+    article.article
+        h2.article__title #{ article.title }
+        .article__details
+            p Author Name: <b>#{ article.author }</b>
+            p Hits: #{ article.hits }
+            p Written Date: #{ article.createdAt.toLocaleString() }
+            .buttons
+                a.button(href=`/modify/${article._id}`)
+                    i.fa-solid.fa-pencil
+                a.button(href=`/delete/${article._id}`)
+                    i.fa-solid.fa-trash
+        pre.article__content #{ article.content }
+    .seperator
+    section.comments
+        h3.comments__count #{ article.comments && article.comments.length || 0 } Comments
+        each comment in article.comments || []
+            article.comment
+                .comment__details
+                    p Commenter Name: <b>#{ comment.commenter }</b>
+                    p Written Date: #{ comment.createdAt.toLocaleString() }
+                    a.button(href=`/delete/${article._id}/${comment._id}`)
+                        i.fa-solid.fa-trash
+                pre.comment__content #{ comment.content }
+    .seperator
+    form.comment-form(method='POST', action=`/${article._id}`)
+        fieldset.comment-form__fieldset
+            label.comment-form__input
+                | Commenter Name
+                input(type='text', name='commenter', placeholder='Enter Name...', required)
+            label.comment-form__input
+                | Commenter Password
+                input(type='password', name='password', placeholder='Enter Password...', required)
+        fieldset.comment-form__fieldset
+            label.comment-form__input
+                | Comment Content
+                textarea(name='content', placeholder='Enter Content...', cols=40, rows=3, required)
+        .comment-form__buttons
+            button.button
+                i.fa-solid.fa-pencil
+            button.button(type='reset')
+                i.fa-solid.fa-refresh

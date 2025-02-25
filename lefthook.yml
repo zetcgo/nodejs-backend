@@ -10,3 +10,6 @@ pre-commit:
         eslint:
             glob: '**'
             run: bun run lint
+        stylelint:
+            glob: '**/*.css'
+            run: bun run style

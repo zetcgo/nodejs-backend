@@ -1,0 +1,82 @@
+.buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.article,
+.comment {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.article__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.article__details,
+.comment__details {
+    display: flex;
+    align-items: center;
+}
+
+.article__details > *:not(:last-child),
+.comment__details > *:not(:last-child) {
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid black;
+}
+
+.article__content,
+.comment__content {
+    padding: 5px;
+    font-family: monospace;
+    text-wrap: wrap;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.comments__count {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment-form__fieldset {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.comment-form__input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.comment-form__buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.seperator {
+    border-bottom: 3px double gray;
+}

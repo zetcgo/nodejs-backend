@@ -1,0 +1,28 @@
+.verify-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    border: 3px solid blue;
+}
+
+.verify-form__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.verify-form__input {
+    width: 600px;
+    height: 3rem;
+    padding-left: 20px;
+    font-size: 1.2rem;
+    border: 2px dashed blue;
+    border-radius: 10px;
+}
+
+.verify-form__error-text {
+    color: red;
+}

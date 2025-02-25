@@ -1,0 +1,55 @@
+@import url('https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css');
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.button {
+    padding: 5px;
+    font-size: 1rem;
+    color: black;
+    cursor: pointer;
+    background: buttonface;
+    border: 1px solid buttonborder;
+    border-radius: 5px;
+
+    &:active {
+        background: rgba(0 0 0 / 30%);
+    }
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    padding: 20px;
+    background: khaki;
+    border-bottom: 1px solid black;
+}
+
+.header__title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
+}

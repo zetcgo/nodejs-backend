@@ -1,0 +1,44 @@
+extends layout
+
+block style
+    link(rel='stylesheet', href='/write.css')
+block content
+    form.write-form(method='POST', action=mode === 'modify' ? `/${article._id}?_method=PUT` : '/')
+        fieldset.write-form__fieldset
+            label.write-form__input
+                | Article Title
+                input(
+                    type='text',
+                    name='title',
+                    placeholder='Enter Title...',
+                    value=mode === 'modify' && article.title,
+                    required
+                )
+            label.write-form__input
+                | Author Name
+                input(
+                    type='text',
+                    name='author',
+                    placeholder='Enter Name...',
+                    value=mode === 'modify' && article.author,
+                    required
+                )
+            label.write-form__input
+                | Author Password
+                input(
+                    type='password',
+                    name='password',
+                    placeholder='Enter Password...',
+                    value=mode === 'modify' && article.password,
+                    required
+                )
+        fieldset.write-form__fieldset
+            label.write-form__input
+                | Article Content
+                textarea(name='content', placeholder='Enter Article...', cols=50, rows=10)
+                    | #{ mode === 'modify' ? article.content : '' }
+        .write-form__buttons
+            button.button
+                i.fa-solid.fa-pencil
+            button.button(type='reset')
+                i.fa-solid.fa-refresh

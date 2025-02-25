@@ -1,0 +1,56 @@
+extends layout
+
+block style
+    link(rel='stylesheet', href='/home.css')
+block content
+    aside.aside
+        form.searchbar
+            input.searchbar__input(
+                type='text',
+                name='input',
+                size=50,
+                placeholder='Which article do you want to input?',
+                value=input
+            )
+            button.button
+                i.fa-solid.fa-magnifying-glass
+        a.button(href='/write')
+            i.fa-solid.fa-pencil
+    section.article-table
+        .article-table__row.article-table__row--header
+            .article-table__cell.article-table__cell--header Index
+            .article-table__cell.article-table__cell--header.article-table__cell--title Title
+            .article-table__cell.article-table__cell--header.article-table__cell--author Author
+            .article-table__cell.article-table__cell--header Written Date
+            .article-table__cell.article-table__cell--header Hits
+            .article-table__cell.article-table__cell--header Comments
+        each article, i in articles
+            a.article-table__row(href=`/${article._id}`)
+                .article-table__cell #{ paginator.totalItemsCount - ((paginator.currentPage - 1) * paginator.itemsPerPage + i) }
+                .article-table__cell.article-table__cell--title #{ article.title }
+                .article-table__cell.article-table__cell--author #{ article.author }
+                .article-table__cell #{ article.createdAt.toLocaleDateString() }
+                .article-table__cell #{ article.hits }
+                .article-table__cell #{ article.comments && article.comments.length || 0 }
+    nav.paginator
+        if paginator.previousRange
+            a.button.paginator__button(href=`/?${input ? `input=${input}&` : ''}page=1`)
+                i.fa-solid.fa-backward-fast
+            a.button.paginator__button(
+                href=`/?${input ? `input=${input}&` : ''}page=${paginator.previousRange.at(-1)}`
+            )
+                i.fa-solid.fa-backward
+        each page in paginator.currentRange
+            if page === parseInt(paginator.currentPage)
+                .button.paginator__button.paginator__button--selected #{ page }
+            else
+                a.button.paginator__button(href=`/?${input ? `input=${input}&` : ''}page=${page}`) #{ page }
+        if paginator.nextRange
+            a.button.paginator__button(
+                href=`/?${input ? `input=${input}&` : ''}page=${paginator.nextRange[0]}`
+            )
+                i.fa-solid.fa-forward
+            a.button.paginator__button(
+                href=`/?${input ? `input=${input}&` : ''}page=${paginator.totalPagesCount}`
+            )
+                i.fa-solid.fa-forward-fast
