@@ -26,7 +26,7 @@
       },
     },
     "src/Chapter6/mongodb": {
-      "name": "nodejs-backend__chapter6",
+      "name": "nodejs-backend__chapter6__mongod b",
       "dependencies": {
         "dotenv": "^16.4.7",
         "mongodb": "^6.13.1",
@@ -603,7 +603,7 @@
 
     "nodejs-backend__chapter3__express": ["nodejs-backend__chapter3__express@workspace:src/Chapter3/express"],
 
-    "nodejs-backend__chapter6": ["nodejs-backend__chapter6@workspace:src/Chapter6/mongodb"],
+    "nodejs-backend__chapter6__mongod b": ["nodejs-backend__chapter6__mongod b@workspace:src/Chapter6/mongodb"],
 
     "nodejs-backend__chapter6__mongoose": ["nodejs-backend__chapter6__mongoose@workspace:src/Chapter6/mongoose"],
 
