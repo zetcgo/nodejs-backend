@@ -12,7 +12,6 @@
         "gitmoji-cli": "^9.5.0",
         "globals": "^16.0.0",
         "lefthook": "^1.11.2",
-        "npm-check-updates": "^17.1.15",
         "prettier": "^3.5.2",
         "sort-package-json": "^2.14.0",
         "stylelint": "^16.14.1",
@@ -609,8 +608,6 @@
     "nodejs-backend__chapter6__mongoose": ["nodejs-backend__chapter6__mongoose@workspace:src/Chapter6/mongoose"],
 
     "normalize-path": ["normalize-path@3.0.0", "", {}, "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA=="],
-
-    "npm-check-updates": ["npm-check-updates@17.1.15", "", { "bin": { "npm-check-updates": "build/cli.js", "ncu": "build/cli.js" } }, "sha512-miATvKu5rjec/1wxc5TGDjpsucgtCHwRVZorZpDkS6NzdWXfnUWlN4abZddWb7XSijAuBNzzYglIdTm9SbgMVg=="],
 
     "npm-run-path": ["npm-run-path@5.3.0", "", { "dependencies": { "path-key": "^4.0.0" } }, "sha512-ppwTtiJZq0O/ai0z7yfudtBpWIoxM8yE6nHi1X47eFR2EWORqfbu6CnPlNsjeN683eT0qG6H/Pyf9fCcvjnnnQ=="],
 
