@@ -19,7 +19,6 @@
         "@types/bun": "^1.2.4",
         "eslint": "^9.21.0",
         "eslint-plugin-prettier": "^5.2.3",
-        "eslint-plugin-pug": "^1.2.5",
         "gitmoji-cli": "^9.5.0",
         "globals": "^16.0.0",
         "lefthook": "^1.11.2",
