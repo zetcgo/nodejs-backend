@@ -1,16 +1,15 @@
 const js = require('@eslint/js');
 const globals = require('globals');
-const prettierPlugin = require('eslint-plugin-prettier');
-const pugPlugin = require('eslint-plugin-pug');
+const prettierLinter = require('eslint-plugin-prettier');
+const prettierConfigRecommended = require('eslint-plugin-prettier/recommended');
+const pugLinter = require('eslint-plugin-pug');
 
 module.exports = [
     js.configs.recommended,
+    prettierConfigRecommended,
     {
         languageOptions: { globals: { ...globals.node } },
-        plugins: { prettierPlugin, pugPlugin },
-    },
-    {
-        files: ['**/src/public/**/*.js'],
-        languageOptions: { globals: { ...globals.browser } },
+        plugins: { prettierLinter, pugLinter },
+        rules: { 'prettier/prettier': 'warn' },
     },
 ];
