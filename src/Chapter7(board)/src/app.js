@@ -1,5 +1,4 @@
 const path = require('path');
-require('dotenv').config({ path: path.join(__dirname, '../.env') });
 const express = require('express');
 const methodOverride = require('method-override');
 const app = express();
@@ -8,7 +7,6 @@ const articleService = new (require('./services/ArticleService'))();
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
