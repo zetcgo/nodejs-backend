@@ -1,6 +1,6 @@
 {
     "name": "nodejs-backend",
-    "version": "0.7.6",
+    "version": "0.7.7",
     "description": "Node.js 백엔드 개발자 되기",
     "workspaces": [
         "src/**"
@@ -18,8 +18,8 @@
         "@prettier/plugin-pug": "^3.2.1",
         "@types/bun": "^1.2.4",
         "eslint": "^9.21.0",
+        "eslint-config-prettier": "^10.0.2",
         "eslint-plugin-prettier": "^5.2.3",
-        "eslint-plugin-pug": "^1.2.5",
         "gitmoji-cli": "^9.5.0",
         "globals": "^16.0.0",
         "lefthook": "^1.11.2",
