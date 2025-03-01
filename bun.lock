@@ -42,8 +42,8 @@
         "mongoose": "^8.10.2",
       },
     },
-    "src/Chapter7(board)": {
-      "name": "nodejs-backend__board",
+    "src/Chapter7--board": {
+      "name": "nodejs-backend__chapter7--board",
       "dependencies": {
         "dotenv": "^16.4.7",
         "express": "^4.21.2",
@@ -636,13 +636,13 @@
 
     "node-fetch": ["node-fetch@3.3.2", "", { "dependencies": { "data-uri-to-buffer": "^4.0.0", "fetch-blob": "^3.1.4", "formdata-polyfill": "^4.0.10" } }, "sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA=="],
 
-    "nodejs-backend__board": ["nodejs-backend__board@workspace:src/Chapter7(board)"],
-
     "nodejs-backend__chapter3__express": ["nodejs-backend__chapter3__express@workspace:src/Chapter3/express"],
 
     "nodejs-backend__chapter6__mongodb": ["nodejs-backend__chapter6__mongodb@workspace:src/Chapter6/mongodb"],
 
     "nodejs-backend__chapter6__mongoose": ["nodejs-backend__chapter6__mongoose@workspace:src/Chapter6/mongoose"],
+
+    "nodejs-backend__chapter7--board": ["nodejs-backend__chapter7--board@workspace:src/Chapter7--board"],
 
     "normalize-path": ["normalize-path@3.0.0", "", {}, "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA=="],
 

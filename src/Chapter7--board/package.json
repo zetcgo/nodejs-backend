@@ -1,5 +1,5 @@
 {
-    "name": "nodejs-backend__board",
+    "name": "nodejs-backend__chapter7--board",
     "scripts": {
         "dev": "bun --watch src/app.js"
     },
