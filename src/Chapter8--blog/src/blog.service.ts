@@ -25,6 +25,6 @@ export class BlogService {
     }
 
     deleteArticle(id: string) {
-        this.blogs.filter((article) => article.id !== id);
+        this.blogs = this.blogs.filter((article) => article.id !== id);
     }
 }
