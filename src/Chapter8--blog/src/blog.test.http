@@ -1,0 +1,29 @@
+@server = http://localhost:3000
+
+GET {{server}}
+
+###
+POST {{server}}
+Content-Type: application/json
+
+{
+    "title": "Lorem ipsum dolor sit amet.",
+    "content": "Sed lacus sem, aliquet a nulla at, rhoncus congue quam. Mauris nec dignissim odio, eget eleifend libero. Vivamus vel turpis quis arcu maximus tempor ut eu leo. Fusce rhoncus, tellus at elementum gravida, erat augue facilisis magna, eget ultricies odio justo non sapien. Curabitur sed purus nisi. Fusce condimentum iaculis nulla, sit amet imperdiet tellus auctor at. Integer nibh ex, condimentum nec rutrum non, eleifend ac massa. Sed volutpat diam in odio ornare egestas. Pellentesque at lobortis mi, in efficitur libero. Vivamus id laoreet nisi, ac rhoncus magna.",
+    "author": "john_doe87"
+}
+
+###
+GET {{server}}/1
+
+###
+PUT {{server}}/1
+Content-Type: application/json
+
+{
+    "title": "Sed interdum, urna vel fermentum.",
+    "content": "Aliquam gravida tortor in porttitor pretium. Aliquam erat volutpat. Nam condimentum ultrices odio, ut ullamcorper massa finibus ut. Quisque id hendrerit est. Nullam lobortis, ipsum et finibus malesuada, nibh enim dignissim sem, eu consectetur ante dui sed libero. Donec venenatis vehicula suscipit. Donec eget ultricies arcu. Integer justo lorem, imperdiet vitae erat et, dapibus hendrerit nibh. Donec id ultricies ipsum. Phasellus vitae pulvinar urna, quis gravida ante. Praesent id tempus ante. Fusce ipsum dolor, mollis ut neque nec, aliquet viverra metus. Proin vitae fringilla diam. Donec porta posuere purus quis hendrerit. Etiam aliquam odio ut ipsum tempor efficitur.",
+    "author": "skywalkerX"
+}
+
+###
+DELETE {{server}}/1
