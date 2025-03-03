@@ -1,9 +1,9 @@
 {
-    "name": "nodejs-backend__chapter8--blog",
+    "name": "nodejs-backend__chapter8",
     "scripts": {
         "build": "nest build",
-        "start": "nest start",
-        "dev": "nest start --watch"
+        "dev": "nest start --watch",
+        "start": "nest start"
     },
     "dependencies": {
         "@nestjs/common": "^11.0.11",
@@ -14,8 +14,5 @@
         "mongoose": "^8.11.0",
         "reflect-metadata": "^0.2.2",
         "typescript": "^5.8.2"
-    },
-    "devDependencies": {
-        "@nestjs/cli": "^11.0.5"
     }
 }
