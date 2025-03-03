@@ -1,30 +1,30 @@
 import { Article } from './blog.model';
+import { BlogRepository, BlogFileRepository } from './blog.repository';
 
 export class BlogService {
-    blogs: Article[] = [];
-    createdCount = 0;
+    blogRepository: BlogRepository;
 
-    getArticles() {
-        return this.blogs;
+    constructor() {
+        this.blogRepository = new BlogFileRepository();
     }
 
-    createArticle(article: Article) {
-        this.blogs.push({ id: `${++this.createdCount}`, ...article, createdAt: new Date() });
+    async getArticles() {
+        return await this.blogRepository.getArticles();
     }
 
-    getArticle(id: string) {
-        return this.blogs.find((article) => article.id === id);
+    async createArticle(article: Article) {
+        await this.blogRepository.createArticle(article);
     }
 
-    updateArticle(id: string, article: Article) {
-        this.blogs[this.blogs.findIndex((article) => article.id === id)] = {
-            id,
-            ...article,
-            updatedAt: new Date(),
-        };
+    async getArticle(id: string) {
+        return await this.blogRepository.getArticle(id);
     }
 
-    deleteArticle(id: string) {
-        this.blogs = this.blogs.filter((article) => article.id !== id);
+    async updateArticle(id: string, article: Article) {
+        await this.blogRepository.updateArticle(id, article);
+    }
+
+    async deleteArticle(id: string) {
+        await this.blogRepository.deleteArticle(id);
     }
 }
