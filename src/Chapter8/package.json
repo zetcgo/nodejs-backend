@@ -14,8 +14,5 @@
         "mongoose": "^8.11.0",
         "reflect-metadata": "^0.2.2",
         "typescript": "^5.8.2"
-    },
-    "devDependencies": {
-        "@nestjs/cli": "^11.0.5"
     }
 }
