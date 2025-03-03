@@ -4,9 +4,6 @@ pre-commit:
         package-json:
             glob: '**/package.json'
             run: bun sort-package-json -c
-        tsconfig-json:
-            glob: '**/tsconfig.json'
-            run: bun sort-tsconfig
         prettier:
             glob: '**'
             run: bun run format
