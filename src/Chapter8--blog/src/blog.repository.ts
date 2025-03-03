@@ -1,3 +1,4 @@
+import { Injectable } from '@nestjs/common';
 import { readFile, writeFile } from 'fs/promises';
 import { Article } from './blog.model';
 
@@ -9,6 +10,7 @@ export type BlogRepository = {
     deleteArticle: (id: string) => Promise<void>;
 };
 
+@Injectable()
 export class BlogFileRepository implements BlogRepository {
     static FILE_NAME = './src/blog.data.json';
     writtenCount = 0;

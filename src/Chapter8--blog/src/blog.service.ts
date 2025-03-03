@@ -1,12 +1,10 @@
+import { Injectable } from '@nestjs/common';
 import { Article } from './blog.model';
-import { BlogRepository, BlogFileRepository } from './blog.repository';
+import { BlogFileRepository } from './blog.repository';
 
+@Injectable()
 export class BlogService {
-    blogRepository: BlogRepository;
-
-    constructor() {
-        this.blogRepository = new BlogFileRepository();
-    }
+    constructor(private readonly blogRepository: BlogFileRepository) {}
 
     async getArticles() {
         return await this.blogRepository.getArticles();

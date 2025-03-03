@@ -4,11 +4,7 @@ import { Article } from './blog.model';
 
 @Controller()
 export class BlogController {
-    blogService: BlogService;
-
-    constructor() {
-        this.blogService = new BlogService();
-    }
+    constructor(private blogService: BlogService) {}
 
     @Get()
     getArticles() {
