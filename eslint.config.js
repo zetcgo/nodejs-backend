@@ -5,6 +5,7 @@ const prettierLinter = require('eslint-plugin-prettier');
 const prettierConfigRecommended = require('eslint-plugin-prettier/recommended');
 
 module.exports = [
+    { ignores: ['**/dist'] },
     js.configs.recommended,
     prettierConfigRecommended,
     {
