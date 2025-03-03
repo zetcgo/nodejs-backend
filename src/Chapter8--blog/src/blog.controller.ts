@@ -1,6 +1,6 @@
 import { Controller, Body, Param, Delete, Get, Post, Put } from '@nestjs/common';
 import { BlogService } from './blog.service';
-import { Article } from './blog.model';
+import { BlogDto } from './blog.model';
 
 @Controller()
 export class BlogController {
@@ -12,7 +12,7 @@ export class BlogController {
     }
 
     @Post()
-    createArticle(@Body() article: Article) {
+    createArticle(@Body() article: BlogDto) {
         return this.blogService.createArticle(article);
     }
 
@@ -22,7 +22,7 @@ export class BlogController {
     }
 
     @Put('/:id')
-    updateArticle(@Param('id') id: string, @Body() article: Article) {
+    updateArticle(@Param('id') id: string, @Body() article: BlogDto) {
         return this.blogService.updateArticle(id, article);
     }
 

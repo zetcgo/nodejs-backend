@@ -1,16 +1,16 @@
 import { Injectable } from '@nestjs/common';
-import { Article } from './blog.model';
-import { BlogFileRepository } from './blog.repository';
+import { BlogDto } from './blog.model';
+import { BlogMongoRepository } from './blog.repository';
 
 @Injectable()
 export class BlogService {
-    constructor(private readonly blogRepository: BlogFileRepository) {}
+    constructor(private readonly blogRepository: BlogMongoRepository) {}
 
     async getArticles() {
         return await this.blogRepository.getArticles();
     }
 
-    async createArticle(article: Article) {
+    async createArticle(article: BlogDto) {
         await this.blogRepository.createArticle(article);
     }
 
@@ -18,7 +18,7 @@ export class BlogService {
         return await this.blogRepository.getArticle(id);
     }
 
-    async updateArticle(id: string, article: Article) {
+    async updateArticle(id: string, article: BlogDto) {
         await this.blogRepository.updateArticle(id, article);
     }
 

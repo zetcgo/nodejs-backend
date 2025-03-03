@@ -1,49 +1,38 @@
 import { Injectable } from '@nestjs/common';
-import { readFile, writeFile } from 'fs/promises';
-import { Article } from './blog.model';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { BlogDto } from './blog.model';
+import { Blog, BlogDocument } from './blog.schema';
 
 export type BlogRepository = {
-    getArticles: () => Promise<Article[]>;
-    createArticle: (article: Article) => Promise<void>;
-    getArticle: (id: string) => Promise<Article>;
-    updateArticle: (id: string, article: Article) => Promise<void>;
+    getArticles: () => Promise<Blog[]>;
+    createArticle: (article: Blog) => Promise<void>;
+    getArticle: (id: string) => Promise<Blog>;
+    updateArticle: (id: string, article: Blog) => Promise<void>;
     deleteArticle: (id: string) => Promise<void>;
 };
 
 @Injectable()
-export class BlogFileRepository implements BlogRepository {
-    static FILE_NAME = './src/blog.data.json';
-    writtenCount = 0;
+export class BlogMongoRepository implements BlogRepository {
+    constructor(@InjectModel(Blog.name) private blogModel: Model<BlogDocument>) {}
 
-    async getArticles(): Promise<Article[]> {
-        const data = await readFile(BlogFileRepository.FILE_NAME, 'utf-8');
-        return JSON.parse(data) as Article[];
+    async getArticles(): Promise<Blog[]> {
+        return await this.blogModel.find().exec();
     }
 
-    async createArticle(article: Article): Promise<void> {
-        const posts = await this.getArticles();
-        posts.push({ id: `${++this.writtenCount}`, ...article, createdAt: new Date() });
-        await writeFile(BlogFileRepository.FILE_NAME, JSON.stringify(posts), 'utf-8');
+    async createArticle(blog: BlogDto): Promise<void> {
+        await this.blogModel.create({ ...blog, createdAt: new Date() });
     }
 
-    async getArticle(id: string): Promise<Article> {
-        const posts = await this.getArticles();
-        return posts.find((article) => article.id === id);
+    async getArticle(_id: string): Promise<Blog> {
+        return await this.blogModel.findOne({ _id }).exec();
     }
 
-    async updateArticle(id: string, article: Article): Promise<void> {
-        const posts = await this.getArticles();
-        posts[posts.findIndex((article) => article.id === id)] = {
-            id,
-            ...article,
-            updatedAt: new Date(),
-        };
-        await writeFile(BlogFileRepository.FILE_NAME, JSON.stringify(posts), 'utf-8');
+    async updateArticle(_id: string, blog: BlogDto): Promise<void> {
+        await this.blogModel.updateOne({ _id }, { _id, ...blog, updatedAt: new Date() });
     }
 
-    async deleteArticle(id: string): Promise<void> {
-        const posts = await this.getArticles();
-        const filteredPosts = posts.filter((post) => post.id !== id);
-        await writeFile(BlogFileRepository.FILE_NAME, JSON.stringify(filteredPosts), 'utf-8');
+    async deleteArticle(_id: string): Promise<void> {
+        await this.blogModel.deleteOne({ _id }).exec();
     }
 }
