@@ -1,0 +1,3 @@
+# Ignore config files
+src/configs/*
+!src/configs/config.ts
