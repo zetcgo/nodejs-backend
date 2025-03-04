@@ -1,6 +1,6 @@
 {
     "name": "nodejs-backend",
-    "version": "0.8.1",
+    "version": "0.9.0",
     "description": "Node.js 백엔드 개발자 되기",
     "workspaces": [
         "src/**"
