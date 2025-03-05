@@ -5,8 +5,7 @@ pre-commit:
             glob: '**/package.json'
             run: bun sort-package-json -c
         tsconfig-json:
-            glob: 'src/**/tsconfig.json'
-            run: bun sort-tsconfig
+            run: bun sort-tsconfig 'src/**/tsconfig.json'
         prettier:
             glob: '**'
             run: bun run format
