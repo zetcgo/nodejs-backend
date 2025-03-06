@@ -1,5 +1,5 @@
 import { Controller, Body, Param, Delete, Get, Post, Put } from '@nestjs/common';
-import { User } from './user.entity';
+import { CreateUserDto, UpdateUserDto } from './user.dto';
 import { UserService } from './user.service';
 
 @Controller('users')
@@ -7,8 +7,8 @@ export class UserController {
     constructor(private readonly userService: UserService) {}
 
     @Post()
-    async createUser(@Body() user: User) {
-        return await this.userService.createUser(user);
+    async createUser(@Body() userDto: CreateUserDto) {
+        return await this.userService.createUser(userDto);
     }
 
     @Get(':email')
@@ -17,8 +17,8 @@ export class UserController {
     }
 
     @Put(':email')
-    async updateUser(@Param('email') email: string, @Body() user: User) {
-        return await this.userService.updateUser(email, user);
+    async updateUser(@Param('email') email: string, @Body() userDto: UpdateUserDto) {
+        return await this.userService.updateUser(email, userDto);
     }
 
     @Delete(':email')

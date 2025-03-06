@@ -21,3 +21,12 @@ Content-Type: application/json
 }
 ###
 DELETE {{server}}/users/cjr202321@yonsei.ac.kr
+###
+POST {{server}}/users
+Content-Type: application/json
+
+{
+    "username": "Troller",
+    "password": "12345678",
+    "email": "definitely-an-email"
+}
