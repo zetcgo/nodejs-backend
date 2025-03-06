@@ -1,13 +1,13 @@
 import * as bcrypt from 'bcrypt';
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { CreateUserDto, LoginUserDto } from '../user/user.dto';
+import { UserDto } from '../user/user.dto';
 import { UserService } from '../user/user.service';
 
 @Injectable()
 export class AuthService {
     constructor(private userService: UserService) {}
 
-    async register(userDto: CreateUserDto) {
+    async register(userDto: UserDto) {
         if (await this.userService.getUser(userDto.email))
             throw new HttpException('Such user already exists', HttpStatus.BAD_REQUEST);
         try {
@@ -21,7 +21,7 @@ export class AuthService {
         }
     }
 
-    async validate(userDto: LoginUserDto) {
+    async validate(userDto: UserDto) {
         const user = await this.userService.getUser(userDto.email);
         if (user && bcrypt.compareSync(userDto.password, user.password))
             return { ...user, password: undefined };

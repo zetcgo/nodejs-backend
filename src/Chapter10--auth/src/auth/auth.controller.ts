@@ -2,19 +2,19 @@ import { Controller, UseGuards, Body, Req, Res, Get, Post } from '@nestjs/common
 import { Response } from 'express';
 import { LoginGuard, RequestWithUser } from './auth.guard';
 import { AuthService } from './auth.service';
-import { CreateUserDto } from '../user/user.dto';
+import { UserDto } from '../user/user.dto';
 
 @Controller('auth')
 export class AuthController {
     constructor(private authService: AuthService) {}
 
     @Post('register')
-    async register(@Body() userDto: CreateUserDto) {
+    async register(@Body() userDto: UserDto) {
         return await this.authService.register(userDto);
     }
 
     // @Post('login')
-    // async login(@Body() userDto: LoginUserDto, @Res() res: Response) {
+    // async login(@Body() userDto: UserDto, @Res() res: Response) {
     //     const userInfo = await this.authService.validate(userDto);
     //     if (userInfo)
     //         res.cookie('login', JSON.stringify(userInfo), {
