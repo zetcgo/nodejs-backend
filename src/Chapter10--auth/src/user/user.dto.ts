@@ -6,6 +6,11 @@ export class CreateUserDto {
     @IsString() password: string;
 }
 
+export class LoginUserDto {
+    @IsEmail() email: string;
+    @IsString() password: string;
+}
+
 export class UpdateUserDto {
     @IsString() username: string;
     @IsString() password: string;

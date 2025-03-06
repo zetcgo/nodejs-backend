@@ -1,0 +1,20 @@
+@server = http://localhost:3000
+
+POST {{server}}/auth/register
+Content-Type: application/json
+
+{
+    "email": "cjr202321@yonsei.ac.kr",
+    "password": "pwpw1234",
+    "username": "Roy1008"
+}
+###
+POST {{server}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "cjr202321@yonsei.ac.kr",
+    "password": "pwpw1234"
+}
+###
+GET {{server}}/auth/profile
