@@ -14,6 +14,14 @@ Content-Type: application/json
 
 {
     "email": "cjr202321@yonsei.ac.kr",
+    "password": "wrong_pw"
+}
+###
+POST {{server}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "cjr202321@yonsei.ac.kr",
     "password": "pwpw1234"
 }
 ###

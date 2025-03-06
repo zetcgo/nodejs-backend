@@ -1,6 +1,6 @@
 import { Controller, UseGuards, Body, Req, Res, Get, Post } from '@nestjs/common';
-import { Response } from 'express';
-import { LoginGuard, RequestWithUser } from './auth.guard';
+import { Request, Response } from 'express';
+import { AuthenticatedGuard, LoginAuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { UserDto } from '../user/user.dto';
 
@@ -24,20 +24,27 @@ export class AuthController {
     //     return res.send({ message: 'Successfully logged in' });
     // }
 
-    @UseGuards(LoginGuard)
+    // @UseGuards(LoginGuard)
+    // @Post('login')
+    // login(@Req() req: RequestWithUser, @Res() res: Response) {
+    //     if (!req.cookies?.login && req.user)
+    //         res.cookie('login', req.user, {
+    //             httpOnly: true,
+    //             maxAge: 1000 * 60 * 60 * 24,
+    //         });
+    //     return res.send({ message: 'Successfully logged in' });
+    // }
+
+    @UseGuards(LoginAuthGuard)
     @Post('login')
-    login(@Req() req: RequestWithUser, @Res() res: Response) {
-        if (!req.cookies?.login && req.user)
-            res.cookie('login', req.user, {
-                httpOnly: true,
-                maxAge: 1000 * 60 * 60 * 24,
-            });
+    login(@Req() req: Request, @Res() res: Response) {
         return res.send({ message: 'Successfully logged in' });
     }
 
-    @UseGuards(LoginGuard)
+    // @UseGuards(LoginGuard)
+    @UseGuards(AuthenticatedGuard)
     @Get('profile')
-    profile(@Req() req: RequestWithUser) {
+    profile(@Req() req: Request) {
         return req.user;
     }
 }
