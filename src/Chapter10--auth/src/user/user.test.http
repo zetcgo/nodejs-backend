@@ -1,0 +1,32 @@
+@server = http://localhost:3000
+
+POST {{server}}/users
+Content-Type: application/json
+
+{
+    "username": "Roy1008",
+    "password": "pwpw1234",
+    "email": "cjr202321@yonsei.ac.kr"
+}
+###
+GET {{server}}/users/cjr202321@yonsei.ac.kr
+###
+PUT {{server}}/users/cjr202321@yonsei.ac.kr
+Content-Type: application/json
+
+{
+    "username": "Roy0821",
+    "password": "8765pwpw",
+    "email": "cjr202321@yonsei.ac.kr"
+}
+###
+DELETE {{server}}/users/cjr202321@yonsei.ac.kr
+###
+POST {{server}}/users
+Content-Type: application/json
+
+{
+    "username": "Troller",
+    "password": "12345678",
+    "email": "definitely-an-email"
+}
