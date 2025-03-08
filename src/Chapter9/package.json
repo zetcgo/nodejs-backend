@@ -3,8 +3,8 @@
     "scripts": {
         "build": "nest build",
         "dev": "NODE_ENV=development nest start --watch",
-        "start": "NODE_ENV=local nest start",
-        "prod": "NODE_ENV=production bun dist/main"
+        "prod": "NODE_ENV=production bun dist/main",
+        "start": "NODE_ENV=local nest start"
     },
     "dependencies": {
         "@nestjs/common": "^11.0.11",
