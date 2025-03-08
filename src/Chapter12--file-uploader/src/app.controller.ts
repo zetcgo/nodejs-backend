@@ -1,7 +1,7 @@
 import crypto from 'crypto';
 import { diskStorage } from 'multer';
 import path from 'path';
-import { Controller, Post, UseInterceptors } from '@nestjs/common';
+import { Controller, Post, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { AppService } from './app.service';
 
@@ -19,7 +19,7 @@ export class AppController {
             }),
         }),
     )
-    uploadFile() {
-        return 'Successfully uploaded file';
+    uploadFile(@UploadedFile() file: Express.Multer.File) {
+        return `Successfully uploaded ${file.originalname} as http://localhost:3000/uploads/${file.filename}`;
     }
 }
