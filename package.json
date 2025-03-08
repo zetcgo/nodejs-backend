@@ -1,6 +1,6 @@
 {
     "name": "nodejs-backend",
-    "version": "0.11.0",
+    "version": "0.11.1",
     "description": "Node.js 백엔드 개발자 되기",
     "workspaces": [
         "src/**"
@@ -14,17 +14,17 @@
         "style:fix": "stylelint --fix **/*.css"
     },
     "devDependencies": {
-        "@eslint/js": "^9.21.0",
+        "@eslint/js": "^9.22.0",
         "@prettier/plugin-pug": "^3.2.1",
-        "eslint": "^9.21.0",
-        "eslint-config-prettier": "^10.0.2",
+        "eslint": "^9.22.0",
+        "eslint-config-prettier": "^10.1.1",
         "eslint-plugin-prettier": "^5.2.3",
         "gitmoji-cli": "^9.5.0",
         "globals": "^16.0.0",
-        "lefthook": "^1.11.2",
+        "lefthook": "^1.11.3",
         "npm-check-updates": "^17.1.15",
         "prettier": "^3.5.3",
-        "sort-package-json": "^2.15.1",
+        "sort-package-json": "^3.0.0",
         "sort-tsconfig": "^0.2.0",
         "stylelint": "^16.15.0",
         "stylelint-config-recess-order": "^6.0.0",
