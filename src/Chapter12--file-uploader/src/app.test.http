@@ -17,3 +17,13 @@ Content-Disposition: form-data; name="file"; filename="file"
 
 < app.test.txt
 --file--
+###
+POST {{server}}
+Content-Type: multipart/form-data; boundary=file
+
+--file--
+Content-Disposition: form-data; name="file"; filename="file.png"
+Content-Type: image/png
+
+< app.test.png
+--file--
