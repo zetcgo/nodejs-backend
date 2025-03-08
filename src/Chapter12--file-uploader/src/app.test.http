@@ -1,0 +1,19 @@
+@server = http://localhost:3000
+
+POST {{server}}
+Content-Type: multipart/form-data; boundary=file
+
+--file--
+Content-Disposition: form-data; name="file"; filename="file"
+
+Cras volutpat nibh congue metus tempor congue.
+--file--
+###
+POST {{server}}
+Content-Type: multipart/form-data; boundary=file
+
+--file--
+Content-Disposition: form-data; name="file"; filename="file"
+
+< app.test.txt
+--file--
