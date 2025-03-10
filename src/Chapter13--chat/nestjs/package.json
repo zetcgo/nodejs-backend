@@ -1,0 +1,21 @@
+{
+    "name": "nodejs-backend__chapter13__chat",
+    "scripts": {
+        "build": "nest build",
+        "dev": "nest start --watch",
+        "start": "nest start"
+    },
+    "dependencies": {
+        "@nestjs/common": "^11.0.11",
+        "@nestjs/core": "^11.0.11",
+        "@nestjs/platform-express": "^11.0.11",
+        "@nestjs/platform-socket.io": "^11.0.11",
+        "@nestjs/websockets": "^11.0.11",
+        "reflect-metadata": "^0.2.2",
+        "socket.io": "^4.8.1",
+        "typescript": "^5.8.2"
+    },
+    "devDependencies": {
+        "@types/socket.io": "^3.0.2"
+    }
+}
