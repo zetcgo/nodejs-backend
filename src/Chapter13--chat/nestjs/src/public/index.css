@@ -1,0 +1,133 @@
+@import url('https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 4rem 1fr;
+    height: 100vh;
+}
+
+button {
+    aspect-ratio: 1;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: tan;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+}
+
+.header__title {
+    font-size: 1.8rem;
+}
+
+.username-form {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.notification {
+    position: absolute;
+    top: -90px;
+    left: 50%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 3rem;
+    padding: 20px;
+    background: chocolate;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+    transform: translateX(-50%);
+    transition: 0.3s ease-in-out;
+}
+
+.notification__icon {
+    font-size: 1.4rem;
+}
+
+.main {
+    display: none;
+    grid-template-rows: 4rem 1fr auto;
+    gap: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.aside {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+}
+
+.rooms {
+    display: flex;
+    align-items: stretch;
+    padding: 5px;
+    overflow-x: auto;
+    border: 1px dotted black;
+    border-radius: 4px;
+}
+
+.room {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.room-separator {
+    margin: 0 10px;
+    border-left: 1px solid black;
+}
+
+.room-form {
+    display: flex;
+    gap: 10px;
+}
+
+.article {
+    padding: 20px;
+    overflow-y: auto;
+    color: lawngreen;
+    background: black;
+}
+
+.chats {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat {
+    font-family: monospace !important;
+}
+
+.chat-separator {
+    margin: 0.3rem 0;
+    border-top: 1px solid lawngreen;
+}
+
+.chat-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+}
+
+.chat-form__input {
+    font-family: monospace !important;
+    color: lawngreen;
+    background: black;
+    border: 0;
+}

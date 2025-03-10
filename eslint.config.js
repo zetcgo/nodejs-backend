@@ -13,6 +13,10 @@ module.exports = [
         plugins: { prettierLinter },
         rules: { 'prettier/prettier': 'warn' },
     },
+    {
+        files: ['**/public/**/*.js'],
+        languageOptions: { globals: { ...globals.browser } },
+    },
     ...ts.configs.recommendedTypeChecked.map((config) => ({
         ...config,
         files: ['**/*.ts'],

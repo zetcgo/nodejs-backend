@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Chat App</title>
+        <link rel="stylesheet" href="index.css" />
+        <script src="https://kit.fontawesome.com/7b418e3171.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header class="header">
+            <h2 class="header__title">Chat App</h2>
+            <form class="username-form">
+                <label>
+                    <input
+                        class="username-form__input"
+                        type="text"
+                        placeholder="Username"
+                        required
+                    />
+                </label>
+                <button class="username-form__submit">
+                    <i class="fa-solid fa-user-plus"></i>
+                </button>
+            </form>
+        </header>
+        <div class="notification">
+            <i class="notification__icon fa-solid fa-bullhorn"></i>
+            <span class="notification__message"></span>
+        </div>
+        <main class="main">
+            <aside class="aside">
+                <ul class="rooms"></ul>
+                <form class="room-form">
+                    <label>
+                        <input
+                            class="room-form__input"
+                            type="text"
+                            placeholder="Room Name"
+                            required
+                        />
+                    </label>
+                    <button class="room-form__submit">
+                        <i class="fa-solid fa-door-open"></i>
+                    </button>
+                </form>
+            </aside>
+            <article class="article">
+                <ul class="chats"></ul>
+            </article>
+            <form class="chat-form">
+                <label>
+                    <input class="chat-form__input" placeholder="Enter message..." required />
+                </label>
+                <button class="chat-form__submit">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </main>
+        <script type="module" src="index.js"></script>
+    </body>
+</html>
